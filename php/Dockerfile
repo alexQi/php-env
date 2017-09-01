@@ -1,5 +1,7 @@
 FROM registry.cn-hangzhou.aliyuncs.com/firefly/base:v1.0
 
+MAINTAINER alex 'alex.qiubo@qq.com'
+
 # 复制文件
 COPY ext/* /home/src/
 ADD  php.ini /home/etc/php.ini
@@ -76,6 +78,4 @@ RUN \
     && ./configure --with-php-config=/usr/local/php/bin/php-config \
     && make && make install \
 #    && echo "zend_extension=xdebug.so">>/usr/local/php/lib/php.ini \
-VOLUME ['/opt/htdocs']
-EXPOSE 9000
 
